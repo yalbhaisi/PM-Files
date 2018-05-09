@@ -1,0 +1,28 @@
+"DIM_UID","DIM_YEAR","MEAS_NAME","MEA_UID","MEAS_METRICS","MEA_CALC_FORM"
+"2018_DIM_A",2018,"General Business Premium (Motor)",1,"NGN",1
+"2018_DIM_A",2018,"Life Business Premium",2,"NGN",1
+"2018_DIM_A",2018,"General Business Premium (Non-Motor)",3,"NGN",1
+"2018_DIM_A",2018,"Health Premium",4,"NGN",1
+"2018_DIM_A",2018,"Bonus Life Premium",5,"NGN",1
+"2018_DIM_A",2018,"Gross Premium Income",6,"NGN",1
+"2018_DIM_A",2018,"Annuity",7,"NGN",1
+"2018_DIM_A",2018,"AXA Mansard Life Savings",8,"NGN",1
+"2018_DIM_A",2018,"Other Savings & Funds Products",9,"NGN",1
+"2018_DIM_A",2018,"AXA Mansard Investment Ltd Funds(Money Market, Equity, Income, Customized Portfolio)",10,"NGN",1
+"2018_DIM_B",2018,"No. of General Business Policies",11,"Number",1
+"2018_DIM_B",2018,"No. of Pure Life Business Policies",12,"Number",1
+"2018_DIM_B",2018,"No. of Savings/Investment Policies",13,"Number",1
+"2018_DIM_B",2018,"No. of Retirement Savings Account for Pensions",14,"Number",1
+"2018_DIM_C",2018,"Average No. of Active DSAs",15,"Number",1
+"2018_DIM_C",2018,"Collaborative Transaction to E-Business & Partner(e.g. CLAP)",16,"NGN",1
+"2018_DIM_C",2018,"No. of Active Corporate Partners for the period",17,"Number",1
+"2018_DIM_C",2018,"No. of Keep In Touch(KIT) Calls Log on CRM",18,"Number",1
+"2018_DIM_C",2018,"No. of Discovery Interviews conducted to actual sales",19,"Number",1
+"2018_DIM_C",2018,"Claims Ratio(GPW in current year/Total Claims Paid for current year x 100)",20,"%",2
+"2018_DIM_C",2018,"CRM Usage (100% upload of details of customers incepted in 2017)",21,"%",1
+"2018_DIM_C",2018,"Policy Renewal Ratio ((Number of renewed policies from the previous year)/(Total number of renewable policies in the previous year) x 100)",22,"%",1
+"2018_DIM_D",2018,"Attendance at in-house training programme
+Attendance at in-house training programme",23,"%",1
+"2018_DIM_D",2018,"Score from Product Knowledge Test ",24,"%",1
+"2018_DIM_D",2018,"Facilitation of Learning Classes for DSA's",25,"Number",1
+"2018_DIM_D",2018,"Score from Agency Model Knowledge Test ",26,"%",1
