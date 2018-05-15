@@ -1,0 +1,618 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title></head>
+<style>
+	.pss{
+		border:1px solid #ccc;
+	}
+	.pss td{
+		font-size:14px;
+	    padding:5px 15px;
+		border:1px solid #ccc;
+	}
+	.pss th{
+		font-size:14px;
+	    padding:5px 15px;
+		border:1px solid #ccc;
+	}
+	.scorecard{
+		border:1px solid #000000;
+		border-collapse:collapse;
+		
+	}
+	.scorecard td{
+		padding:0px;
+		font-size:12px;
+		border:1px solid #000000;
+	}
+	.scorecard th{
+		padding:0px;
+		font-size:12px;
+		border:1px solid #000000;
+	}
+</style>
+<body>
+<table class="pss" style="width: 95%;" cellspacing="0" cellpadding="0" border="0">
+<tbody>
+<tr><th align="center" style="background-color: #eee; padding: 10px 20px;" colspan="4" scope="col">CONFIRMATION APPRAISAL FORM - PROFESSIONAL SALES STAFF</th></tr>
+<tr>
+<td align="right" width="28%"><strong>Name</strong></td>
+<td width="30%">@#requester_name</td>
+<td align="right" width="24%"><strong>Business Office</strong></td>
+<td width="18%">@#business_office</td>
+</tr>
+<tr>
+<td align="right"><strong>Level at Entry</strong></td>
+<td>@#entrylevel</td>
+<td align="right"><strong>Present Level</strong></td>
+<td>@#present_level</td>
+</tr>
+<tr>
+<td align="right"><strong>Appraisal Covering From</strong></td>
+<td>@#apps</td>
+<td align="right"><strong>To</strong></td>
+<td>@#appe</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>@#period_type_label</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><strong>SECTION A</strong></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td colspan="3">List your major duties during the period under review</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td colspan="3">@#major_duties</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>a. What factors impede your job efficiency?</td>
+<td>b. How can the Contraints be removed?</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>@#impeding_factors</td>
+<td>@#constraint_remover</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><strong>SECTION B: CULTURE ALIGNMENT</strong></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td colspan="4">Score Grid: Outstanding -5; Very Good -4; Good -3; Needs Improvement -2; Unsatisfactory -1;</td>
+</tr>
+<tr>
+<td colspan="4">
+<table style="width: 100%;" cellspacing="0" cellpadding="0" border="0">
+<tbody>
+<tr>
+<td align="center">VALUES</td>
+<td align="center">Integrity</td>
+<td align="center">Customer First</td>
+<td align="center">Courage</td>
+<td align="center">One AXA</td>
+</tr>
+<tr>
+<td align="center">Score(5 - 1)</td>
+<td align="center">@#integrity</td>
+<td align="center">@#customer_first</td>
+<td align="center">@#courage</td>
+<td align="center">@#one_AXA</td>
+</tr>
+<tr>
+<td align="center">DIMENSIONS</td>
+<td align="center">Vision</td>
+<td align="center">Customer</td>
+<td align="center">Transform</td>
+<td align="center">Deliver</td>
+</tr>
+<tr>
+<td align="center">Score(5 - 1)</td>
+<td align="center">@#stratigic_vision</td>
+<td align="center">@#focus_customer</td>
+<td align="center">@#change_leadership</td>
+<td align="center">@#result_orientation</td>
+</tr>
+<tr>
+<td align="center">&nbsp;</td>
+<td align="center">Develop</td>
+<td align="center">Lead</td>
+<td align="center">Collaborate</td>
+<td align="center">&nbsp;</td>
+</tr>
+<tr>
+<td align="center">Score(5 - 1)</td>
+<td align="center">@#building_capacity</td>
+<td align="center">@#team_leadership</td>
+<td align="center">@#share_to_succeed</td>
+<td align="center">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2">SCORE FOR VALUES</td>
+<td align="center">@#score_for_values</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2">SCORE FOR DIMENSION</td>
+<td align="center">@#score_for_dimension</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2">TOTAL SCORE</td>
+<td align="center">@#total_score</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td style="border: 0px;">&nbsp;</td>
+<td style="border: 0px;">&nbsp;</td>
+<td style="border: 0px;">&nbsp;</td>
+<td style="border: 0px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="border: 0px;">&nbsp;</td>
+<td style="border: 0px;">&nbsp;</td>
+<td style="border: 0px;">&nbsp;</td>
+<td style="border: 0px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="border: 0px;">&nbsp;</td>
+<td style="border: 0px;">&nbsp;</td>
+<td style="border: 0px;">&nbsp;</td>
+<td style="border: 0px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="border: 0px;">&nbsp;</td>
+<td style="border: 0px;">&nbsp;</td>
+<td style="border: 0px;">&nbsp;</td>
+<td style="border: 0px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="border: 0px;">&nbsp;</td>
+<td style="border: 0px;">&nbsp;</td>
+<td style="border: 0px;">&nbsp;</td>
+<td style="border: 0px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="border: 0px;">&nbsp;</td>
+<td style="border: 0px;">&nbsp;</td>
+<td style="border: 0px;">&nbsp;</td>
+<td style="border: 0px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="border: 0px;">&nbsp;</td>
+<td style="border: 0px;">&nbsp;</td>
+<td style="border: 0px;">&nbsp;</td>
+<td style="border: 0px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="border: 0px;">&nbsp;</td>
+<td style="border: 0px;">&nbsp;</td>
+<td style="border: 0px;">&nbsp;</td>
+<td style="border: 0px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="border: 0px;">&nbsp;</td>
+<td style="border: 0px;">&nbsp;</td>
+<td style="border: 0px;">&nbsp;</td>
+<td style="border: 0px;">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="4">BALANCE SCORE CARD</td>
+</tr>
+<tr>
+<td colspan="4">
+<table class="scorecard">
+<tbody>
+<tr><th colspan="4" scope="col" style="border: 1px solid #ccc; font-size: 9px;">&nbsp;</th><th scope="col" style="border: 1px solid #ccc; font-size: 9px;">
+<div align="center"></div>
+</th><th colspan="3" scope="col" style="border: 1px solid #ccc;">&nbsp;</th><th colspan="4" scope="col" style="border: 1px solid #ccc;">&nbsp;</th></tr>
+<tr>
+<td colspan="4" style="border: 1px solid #ccc;">&nbsp;</td>
+<td style="border: 1px solid #ccc;">
+<div align="center"></div>
+</td>
+<td colspan="3" style="border: 1px solid #ccc; font-size: 9px;">
+<div align="center">PSS LEVEL</div>
+</td>
+<td colspan="4" style="border: 1px solid #ccc;">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" style="border: 1px solid #ccc;">&nbsp;</td>
+<td style="border: 1px solid #ccc; font-size: 9px;">Goals/Objectives</td>
+<td style="border: 1px solid #ccc; font-size: 9px;">Measure</td>
+<td style="border: 1px solid #ccc; font-size: 9px;">
+<div align="center">Metrics</div>
+</td>
+<td style="border: 1px solid #ccc; font-size: 9px;">Total Budget</td>
+<td colspan="2" style="border: 1px solid #ccc; font-size: 9px;">Weightings</td>
+<td style="border: 1px solid #ccc; font-size: 9px;">Actual Performance</td>
+<td colspan="2" style="border: 1px solid #ccc; font-size: 9px;">Score</td>
+<td style="border: 1px solid #ccc;">&nbsp;</td>
+</tr>
+<tr>
+<td rowspan="9" style="border: 1px solid #ccc;">A</td>
+<td rowspan="9" style="border: 1px solid #ccc; font-size: 9px;">Financial Dimension</td>
+<td rowspan="9" style="border: 1px solid #ccc; font-size: 9px;">Achieve and Surpass Financial Targets</td>
+<td style="border: 1px solid #ccc; font-size: 9px;">General Business Premium(Motor)</td>
+<td style="border: 1px solid #ccc; font-size: 9px;">
+<div align="center">NGN</div>
+</td>
+<td style="border: 1px solid #ccc;"><label> @#gbp_Motor1_h </label></td>
+<td style="border: 1px solid #ccc;">@#gbp_Motor2_h</td>
+<td rowspan="9" style="border: 1px solid #ccc;">@#total_weightings1_h</td>
+<td>@#gbp_Motor3_h</td>
+<td style="border: 1px solid #ccc;">@#gbp_Motor4_h</td>
+<td style="border: 1px solid #ccc;">@#gbp_Motor5_h</td>
+<td rowspan="9" style="border: 1px solid #ccc;">@#total_financial_dimension_h</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ccc; font-size: 9px;">Life Business Premium</td>
+<td style="border: 1px solid #ccc; font-size: 9px;">
+<div align="center">NGN</div>
+</td>
+<td style="border: 1px solid #ccc;">@#life_bp1_h</td>
+<td style="border: 1px solid #ccc;">@#life_bp2_h</td>
+<td style="border: 1px solid #ccc;">@#life_bp3_h</td>
+<td style="border: 1px solid #ccc;">@#life_bp4_h</td>
+<td style="border: 1px solid #ccc;">@#life_bp5_h</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ccc; font-size: 9px;">General Business Premium(Non-Motor)</td>
+<td style="border: 1px solid #ccc; font-size: 9px;">
+<div align="center">NGN</div>
+</td>
+<td style="border: 1px solid #ccc;">@#gbp_non_Motor1_h</td>
+<td style="border: 1px solid #ccc;">@#gbp_non_Motor2_h</td>
+<td style="border: 1px solid #ccc;">@#gbp_non_Motor3_h</td>
+<td style="border: 1px solid #ccc;">@#gbp_non_Motor4_h</td>
+<td style="border: 1px solid #ccc;">@#gbp_non_Motor5_h</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ccc; font-size: 9px;"><strong>Gross Premium Income</strong></td>
+<td style="border: 1px solid #ccc; font-size: 9px;">
+<div align="center"><strong>NGN</strong></div>
+</td>
+<td style="border: 1px solid #ccc;"><strong>@#gross_prem_income1_h</strong></td>
+<td style="border: 1px solid #ccc;"><strong>@#gross_prem_income2_h</strong></td>
+<td style="border: 1px solid #ccc;"><strong>@#gross_prem_income3_h</strong></td>
+<td style="border: 1px solid #ccc;"><strong>@#gross_prem_income4_h</strong></td>
+<td style="border: 1px solid #ccc;"><strong>@#gross_prem_income5_h</strong></td>
+</tr>
+<tr>
+<td style="border: 1px solid #ccc; font-size: 9px;">Annuity</td>
+<td style="border: 1px solid #ccc; font-size: 9px;">
+<div align="center">NGN</div>
+</td>
+<td style="border: 1px solid #ccc;">@#annuity1_h</td>
+<td style="border: 1px solid #ccc;">@#annuity2_h</td>
+<td style="border: 1px solid #ccc;">@#annuity3_h</td>
+<td style="border: 1px solid #ccc;">@#annuity4_h</td>
+<td style="border: 1px solid #ccc;">@#annuity5_h</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ccc; font-size: 9px;">AXA Mansard Life Savings</td>
+<td style="border: 1px solid #ccc; font-size: 9px;">
+<div align="center">NGN</div>
+</td>
+<td style="border: 1px solid #ccc;">@#axa_life_savings1_h</td>
+<td style="border: 1px solid #ccc;">@#axa_life_savings2_h</td>
+<td style="border: 1px solid #ccc;">@#axa_life_savings3_h</td>
+<td style="border: 1px solid #ccc;">@#axa_life_savings4_h</td>
+<td style="border: 1px solid #ccc;">@#axa_life_savings5_h</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ccc; font-size: 9px;">Other Savings &amp; Funds Products</td>
+<td style="border: 1px solid #ccc; font-size: 9px;">
+<div align="center">NGN</div>
+</td>
+<td style="border: 1px solid #ccc;">@#other_savings1_h</td>
+<td style="border: 1px solid #ccc;">@#other_savings2_h</td>
+<td style="border: 1px solid #ccc;">@#other_savings3_h</td>
+<td style="border: 1px solid #ccc;">@#other_savings4_h</td>
+<td style="border: 1px solid #ccc;">@#other_savings5_h</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ccc; font-size: 9px;">AXA Mansard Health Products</td>
+<td style="border: 1px solid #ccc; font-size: 9px;">
+<div align="center">NGN</div>
+</td>
+<td style="border: 1px solid #ccc;">@#health_products1_h</td>
+<td style="border: 1px solid #ccc;">@#health_products2_h</td>
+<td style="border: 1px solid #ccc;">@#health_products3_h</td>
+<td style="border: 1px solid #ccc;">@#health_products4_h</td>
+<td style="border: 1px solid #ccc;">@#health_products5_h</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ccc; font-size: 9px;">AXA Mansard Investments Ltd Funds(Money Market, Equity Income, Customised Portfolio)</td>
+<td style="border: 1px solid #ccc; font-size: 9px;">
+<div align="center">NGN</div>
+</td>
+<td style="border: 1px solid #ccc;">@#invest_funds1_h</td>
+<td style="border: 1px solid #ccc;">@#invest_funds2_h</td>
+<td style="border: 1px solid #ccc;">@#invest_funds3_h</td>
+<td style="border: 1px solid #ccc;">@#invest_funds4_h</td>
+<td style="border: 1px solid #ccc;">@#invest_funds5_h</td>
+</tr>
+<tr>
+<td rowspan="4" style="border: 1px solid #ccc;">B</td>
+<td rowspan="4" style="border: 1px solid #ccc; font-size: 9px;">Customer Dimension</td>
+<td rowspan="4" style="border: 1px solid #ccc; font-size: 9px;">Total Number of Policies</td>
+<td style="border: 1px solid #ccc; font-size: 9px;">No. of General Business Policies</td>
+<td style="border: 1px solid #ccc; font-size: 9px;">
+<div align="center">Number</div>
+</td>
+<td style="border: 1px solid #ccc;">@#gen_bus_pol1_h</td>
+<td style="border: 1px solid #ccc;">@#gen_bus_pol2_h</td>
+<td rowspan="4" style="border: 1px solid #ccc;">@#total_weightings2_h</td>
+<td style="border: 1px solid #ccc;">@#gen_bus_pol3_h</td>
+<td style="border: 1px solid #ccc;">@#gen_bus_pol4_h</td>
+<td style="border: 1px solid #ccc;">@#gen_bus_pol5_h</td>
+<td rowspan="4" style="border: 1px solid #ccc;">@#customer_dimension</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ccc; font-size: 9px;">No. of Pure Life Business Policies</td>
+<td style="border: 1px solid #ccc; font-size: 9px;">
+<div align="center">Number</div>
+</td>
+<td style="border: 1px solid #ccc;">@#pure_life_bus_pol1_h</td>
+<td style="border: 1px solid #ccc;">@#pure_life_bus_pol2_h</td>
+<td style="border: 1px solid #ccc;">@#pure_life_bus_pol3_h</td>
+<td style="border: 1px solid #ccc;">@#pure_life_bus_pol4_h</td>
+<td style="border: 1px solid #ccc;">@#pure_life_bus_pol5_h</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ccc; font-size: 9px;">No. of Savings/Investment Policies</td>
+<td style="border: 1px solid #ccc; font-size: 9px;">
+<div align="center">Number</div>
+</td>
+<td style="border: 1px solid #ccc;">@#savings_invest_pol1_h</td>
+<td style="border: 1px solid #ccc;">@#savings_invest_pol2_h</td>
+<td style="border: 1px solid #ccc;">@#savings_invest_pol3_h</td>
+<td style="border: 1px solid #ccc;">@#savings_invest_pol4_h</td>
+<td style="border: 1px solid #ccc;">@#savings_invest_pol5_h</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ccc; font-size: 9px;">No. of Retirement Savings Account for Pensions</td>
+<td style="border: 1px solid #ccc; font-size: 9px;">
+<div align="center">Number</div>
+</td>
+<td style="border: 1px solid #ccc;">@#retirement_sap1_h</td>
+<td style="border: 1px solid #ccc;">@#retirement_sap2_h</td>
+<td style="border: 1px solid #ccc;">@#retirement_sap3_h</td>
+<td style="border: 1px solid #ccc;">@#retirement_sap4_h</td>
+<td style="border: 1px solid #ccc;">@#retirement_sap5_h</td>
+</tr>
+<tr>
+<td rowspan="6" style="border: 1px solid #ccc;">&nbsp;</td>
+<td rowspan="6" style="border: 1px solid #ccc; font-size: 9px;">Internal Process Dimension</td>
+<td rowspan="6" style="border: 1px solid #ccc; font-size: 9px;">Position AXA MANSARD as a solid &amp; efficient provider of convenient and accessible solutions</td>
+<td style="border: 1px solid #ccc; font-size: 9px;">Average No. of Active DSAs</td>
+<td style="border: 1px solid #ccc; font-size: 9px;">
+<div align="center">Number</div>
+</td>
+<td style="border: 1px solid #ccc;">@#av_act_dsa1_h</td>
+<td style="border: 1px solid #ccc;">@#av_act_dsa2_h</td>
+<td rowspan="6" style="border: 1px solid #ccc;">@$total_weightings3_h</td>
+<td style="border: 1px solid #ccc;">@#av_act_dsa3_h</td>
+<td style="border: 1px solid #ccc;">@#av_act_dsa4_h</td>
+<td style="border: 1px solid #ccc;">@#av_act_dsa5_h</td>
+<td rowspan="6" style="border: 1px solid #ccc;">@#internal_pro_dimension_h</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ccc; font-size: 9px;">Collaborative transaction to e-Business &amp; Partner (e.g CLAP)</td>
+<td style="border: 1px solid #ccc; font-size: 9px;">
+<div align="center">NGN</div>
+</td>
+<td style="border: 1px solid #ccc;">@#coll_trans_bp1_h</td>
+<td style="border: 1px solid #ccc;">@#coll_trans_bp2_h</td>
+<td style="border: 1px solid #ccc;">@#coll_trans_bp3_h</td>
+<td style="border: 1px solid #ccc;">@#coll_trans_bp4_h</td>
+<td style="border: 1px solid #ccc;">@#coll_trans_bp5_h</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ccc; font-size: 9px;">No. of Active Corporate Partners for the period</td>
+<td style="border: 1px solid #ccc; font-size: 9px;">
+<div align="center">Number</div>
+</td>
+<td style="border: 1px solid #ccc;">@#act_coll_pp1_h</td>
+<td style="border: 1px solid #ccc;">@#act_coll_pp2_h</td>
+<td style="border: 1px solid #ccc;">@#act_coll_pp3_h</td>
+<td style="border: 1px solid #ccc;">@#act_coll_pp4_h</td>
+<td style="border: 1px solid #ccc;">@#act_coll_pp5_h</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ccc; font-size: 9px;">Claims Ratio (GPW in current year/Total Claims Paid for Current year x 100)</td>
+<td style="border: 1px solid #ccc;">
+<div align="center">%</div>
+</td>
+<td style="border: 1px solid #ccc;">@#claims_ratio1_h</td>
+<td style="border: 1px solid #ccc;">@#claims_ratio2_h</td>
+<td style="border: 1px solid #ccc;">@#claims_ratio3_h</td>
+<td style="border: 1px solid #ccc;">@#claims_ratio4_h</td>
+<td style="border: 1px solid #ccc;">@#claims_ratio5_h</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ccc; font-size: 9px;">CRM Usage (100% upload of details of customers incepted in xxxx)</td>
+<td style="border: 1px solid #ccc;">
+<div align="center">%</div>
+</td>
+<td style="border: 1px solid #ccc;">@#crm_usage1_h</td>
+<td style="border: 1px solid #ccc;">@#crm_usage2_h</td>
+<td style="border: 1px solid #ccc;">@#crm_usage3_h</td>
+<td style="border: 1px solid #ccc;">@#crm_usage4_h</td>
+<td style="border: 1px solid #ccc;">@#crm_usage5_h</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ccc; font-size: 9px;">Policy Renewal Ratio ((Number of renewed policies from the previous year) / (Total number of revewable policies in the previus year) x 100</td>
+<td style="border: 1px solid #ccc;">
+<div align="center">%</div>
+</td>
+<td style="border: 1px solid #ccc;">@#pol_renew_ratio1_h</td>
+<td style="border: 1px solid #ccc;">@#pol_renew_ratio2_h</td>
+<td style="border: 1px solid #ccc;">@#pol_renew_ratio3_h</td>
+<td style="border: 1px solid #ccc;">@#pol_renew_ratio4_h</td>
+<td style="border: 1px solid #ccc;">@#pol_renew_ratio5_h</td>
+</tr>
+<tr>
+<td colspan="8" style="border: 1px solid #ccc; font-size: 11px;"><strong><strong>TOTAL WEIGHT &amp; SCORE</strong></strong>
+<div style="text-align: right;">@#total_weightings4_h</div>
+</td>
+<td>&nbsp;</td>
+<td style="border: 1px solid #ccc;">@#total_score1_h</td>
+<td style="border: 1px solid #ccc;">@#total_score2_h</td>
+<td style="border: 1px solid #ccc;">@#total_score3_h</td>
+</tr>
+<tr>
+<td align="right" colspan="12" style="border: 1px solid #ccc;">@#total_score4_h</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><strong>SECTION C: PERFORMANCE SUMMARY</strong></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td colspan="2">Total Score %</td>
+</tr>
+<tr>
+<td colspan="2">Performance Attribute(Actual Score / 100 x 80)</td>
+<td colspan="2">@#total_performance_attributes</td>
+</tr>
+<tr>
+<td colspan="2">Culture Score (Actual Score / 55 x 20)</td>
+<td colspan="2">@#total_culture_score</td>
+</tr>
+<tr>
+<td colspan="2">Aggregate Score (Performance Attribute + Culture)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><strong>Total</strong></td>
+<td colspan="2"><strong>@#aggregate_score</strong></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td colspan="4"><strong>SECTION D: APPRAISAL COMMENTS</strong></td>
+</tr>
+<tr>
+<td colspan="4">
+<table style="width: 100%;" cellspacing="0" cellpadding="0" border="0">
+<tbody>
+<tr>
+<td>Business Manager: @#business_manager_name</td>
+<td>Comments: @#business_manager_comment</td>
+<td>Date: @#business_manager_date</td>
+</tr>
+<tr>
+<td>Name of Appraisee: @#appraisee_name</td>
+<td>Comments: @#appraisee_comment</td>
+<td>Date: @#appraisee_date</td>
+</tr>
+<tr>
+<td colspan="3">Has Appraisal Feedback Meeting been held? : @#appraisal_meeting_label</td>
+</tr>
+<tr>
+<td>Name of Group Head: @#group_head_name</td>
+<td>Comments: @#group_head_comments</td>
+<td>Date: @#group_head_date</td>
+</tr>
+<tr>
+<td>Human Resource: @#human_resource</td>
+<td>Comments: @#human_resource_comment</td>
+<td>Date: @#human_resource_date</td>
+</tr>
+<tr>
+<td>Name of Divisional Director: @#divisional_director_name</td>
+<td>Comments: @#divisional_director_comment</td>
+<td>Date: @#divisional_director_date</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="4">@#action_plan_label</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
