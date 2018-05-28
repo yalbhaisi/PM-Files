@@ -1,0 +1,90 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using RestSharp;
+using PMGateway.Models;
+using Newtonsoft.Json;
+
+namespace PMGateway.Controllers
+{
+    public class PMProcessesController : Controller
+    {
+        // GET: PMProcesses
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        public string FetchRequestForm()
+        {
+            AccessToken token = new PMGatewayController().PMAccessToken();
+            RestClient client = new RestClient(PMServerParams.IPAddress);
+            var request = new RestRequest("api/1.0/" + PMServerParams.workspace + "/project/6702262155a6744606ca5d1007883498/dynaform/5322699955a674461505342075350403", Method.GET) { RequestFormat = DataFormat.Json };
+            request.AddHeader("Authorization", "Bearer " + token.access_token);
+            var response = client.Execute(request);
+            //Response.Write("Dynaform: " + response.Content);
+            //ViewBag.Message = response.Content;
+            string result = response.Content;
+            //List<Dictionary<string, string>> ValueList = JsonConvert.DeserializeObject<List<Dictionary<string, string>>>(result);
+            //int number = ValueList.Count;
+
+            return result;
+        }
+        public ActionResult AimsAccessForm()
+        {
+            return View();
+        }
+
+        public ActionResult AimsAccessForm1()
+        {
+            return View();
+        }
+
+        public ActionResult SubmitAimsAccessForm()
+        {
+            var form = Request.Form;
+            CaseVariables variables = new CaseVariables();
+            List<CaseVariable> list = new List<CaseVariable>(); 
+            list.Add(new CaseVariable {VariableName = "requester_username", VariableValue = "poke" }); 
+            list.Add(new CaseVariable { VariableName = "txtName", VariableValue = form["txtName"] }); 
+            list.Add(new CaseVariable { VariableName = "txtRequestOfficerName", VariableValue = form["txtName"] });
+            list.Add(new CaseVariable { VariableName = "txtExistingUserId", VariableValue = form["txtExistingUserId"] }); 
+            list.Add(new CaseVariable { VariableName = "txtUnit", VariableValue = form["txtUnit"] }); 
+            list.Add(new CaseVariable { VariableName = "txtGroup", VariableValue = form["txtGroup"] }); 
+            list.Add(new CaseVariable { VariableName = "ddlRequestFunction", VariableValue =  form["ddlRequestFunction"] }); 
+
+            list.Add(new CaseVariable { VariableName = "chkLifeUnderWriting", VariableValue = form["chkLifeUnderWriting"] }); 
+            list.Add(new CaseVariable { VariableName = "chkReinsurance", VariableValue =  form["chkReinsurance"] }); 
+            list.Add(new CaseVariable { VariableName = "chkGenBizUnderwriting", VariableValue =  form["chkGenBizUnderwriting"]  });
+
+            list.Add(new CaseVariable { VariableName = "checkgroupVar007", VariableValue =  form["checkgroupVar007"] });
+            list.Add(new CaseVariable { VariableName = "chkChartOfAccounts", VariableValue =  form["chkChartOfAccounts"]  });
+            list.Add(new CaseVariable { VariableName = "chkAccountVoucher", VariableValue = form["chkAccountVoucher"]  });
+
+            list.Add(new CaseVariable { VariableName = "chkAccountQuery", VariableValue =  form["chkAccountQuery"]  });
+            list.Add(new CaseVariable { VariableName = "chkAccountFunctions", VariableValue = form["chkAccountFunctions"]  });
+            list.Add(new CaseVariable { VariableName = "chkReports", VariableValue =  form["chkReports"]  });
+
+            list.Add(new CaseVariable { VariableName = "chkStatementOfAccount", VariableValue =  form["chkStatementOfAccount"]  });
+            list.Add(new CaseVariable { VariableName = "txtReasonForRequest", VariableValue = form["txtReasonForRequest"] });
+
+            variables.caseVariable = list;
+            //Response.Write("Output: " + list.ToArray().);
+            AccessTokenParams AP = new AccessTokenParams();
+            PMRequestParam reqP = new PMRequestParam
+            {
+                username = AP.username,
+                password = AP.password,
+                name = "Ternenge Aza",
+                pro_uid = "3675562005a55f3e9cf0c92019681971",
+                tas_uid = "6981393885a55f4dc5792d0026433325"
+            };
+            reqP.caseVariables = variables;
+            var result = new PMGatewayController().Post(reqP);
+            return null;
+            //return RedirectToAction("AimsAccessForm1");
+        }
+    }
+}
