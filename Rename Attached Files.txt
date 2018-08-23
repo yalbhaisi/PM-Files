@@ -1,0 +1,518 @@
+function renameFileName($appDocUid,$newName){
+	$sql = "UPDATE APP_DOCUMENT SET APP_DOC_FILENAME = '$newName' WHERE APP_DOC_UID = '$appDocUid'";
+	executeQuery($sql);
+}
+
+$data = array();
+$count = 0;
+if(!empty(@=damagedVehiclePhotos)){
+	foreach(@=damagedVehiclePhotos as $fileData){
+		$appDocUid = $fileData["appDocUid"];
+		$name = $fileData["name"];
+		$version = $fileData["version"];
+		$ext = substr($name,strrpos($name,"."));
+		$newName = "PHOTOGRAPH OF AFFECTED PARTS".($count +1).$ext;
+		$xd = array(
+			"appDocUid" => $appDocUid,
+			"name"=> $newName,
+			"version" => $version
+		);
+		$data[$count] = $xd;
+		$count ++;
+		
+		renameFileName($appDocUid,$newName);
+	}
+	@=damagedVehiclePhotos = $data;
+}
+
+if(@=claimsForm != "" && (@=claimsForm_label != "" || @=claimsForm_label != "[]")){
+	$text = substr(@=claimsForm_label,2,-2);
+	$appDocUid = substr(@=claimsForm,2,-2);
+	$ext = substr($text,strrpos($text,"."));
+	$newName = "CLAIMS FORM".$ext;
+	@=claimsForm_label = "[\"".$newName."\"]";
+	renameFileName($appDocUid,$newName);
+}
+
+if(@=policeReport != "" && (@=policeReport_label != "" || @=policeReport_label != "[]")){
+	$text = substr(@=policeReport_label,2,-2);
+	$appDocUid = substr(@=policeReport,2,-2);
+	$ext = substr($text,strrpos($text,"."));
+	$newName = "POLICE REPORT".$ext;
+	@=policeReport_label = "[\"".$newName."\"]";
+	renameFileName($appDocUid,$newName);
+}
+
+if(@=certificateOfInsurance != "" && (@=certificateOfInsurance_label != "" || @=certificateOfInsurance_label != "[]")){
+	$text = substr(@=certificateOfInsurance_label,2,-2);
+	$appDocUid = substr(@=certificateOfInsurance,2,-2);
+	$ext = substr($text,strrpos($text,"."));
+	$newName = "CERTIFICATE OF INSURANCE".$ext;
+	@=certificateOfInsurance_label = "[\"".$newName."\"]";
+	renameFileName($appDocUid,$newName);
+}
+
+if(@=medicalReport != "" && (@=medicalReport_label != "" || @=medicalReport_label != "[]")){
+	$text = substr(@=medicalReport_label,2,-2);
+	$appDocUid = substr(@=medicalReport,2,-2);
+	$ext = substr($text,strrpos($text,"."));
+	$newName = "MEDICAL REPORT".$ext;
+	@=medicalReport_label = "[\"".$newName."\"]";
+	renameFileName($appDocUid,$newName);
+}
+ 
+if(@=deathCertificate != "" && (@=deathCertificate_label != "" || @=deathCertificate_label != "[]")){
+	$text = substr(@=deathCertificate_label,2,-2);
+	$appDocUid = substr(@=deathCertificate,2,-2);
+	$ext = substr($text,strrpos($text,"."));
+	$newName = "DEATH CERTIFICATE".$ext;
+	@=deathCertificate_label = "[\"".$newName."\"]";
+	renameFileName($appDocUid,$newName);
+}
+
+if(@=threeMonthsPaySlip != "" && (@=threeMonthsPaySlip_label != "" || @=threeMonthsPaySlip_label != "[]")){
+	$text = substr(@=threeMonthsPaySlip_label,2,-2);
+	$appDocUid = substr(@=threeMonthsPaySlip,2,-2);
+	$ext = substr($text,strrpos($text,"."));
+	$newName = "THREE MONTHS PAY SLIP PRECEDING DEATH".$ext;
+	@=threeMonthsPaySlip_label = "[\"".$newName."\"]";
+	renameFileName($appDocUid,$newName);
+}  
+
+if(@=threeMonthsPaySlip1 != "" && (@=threeMonthsPaySlip1_label != "" || @=threeMonthsPaySlip1_label != "[]")){
+	$text = substr(@=threeMonthsPaySlip1_label,2,-2);
+	$appDocUid = substr(@=threeMonthsPaySlip1,2,-2);
+	$ext = substr($text,strrpos($text,"."));
+	$newName = "THREE MONTHS PAY SLIP PRECEDING ACCIDENT".$ext;
+	@=threeMonthsPaySlip1_label = "[\"".$newName."\"]";
+	renameFileName($appDocUid,$newName);
+}
+
+if(@=medicalBill != "" && (@=medicalBill_label != "" || @=medicalBill_label != "[]")){
+	$text = substr(@=medicalBill_label,2,-2);
+	$appDocUid = substr(@=medicalBill,2,-2);
+	$ext = substr($text,strrpos($text,"."));
+	$newName = "MEDICAL BILL".$ext;
+	@=medicalBill_label = "[\"".$newName."\"]";
+	renameFileName($appDocUid,$newName);
+}
+
+if(@=auditedAccountOfCompany != "" && (@=auditedAccountOfCompany_label != "" || @=auditedAccountOfCompany_label != "[]")){
+	$text = substr(@=auditedAccountOfCompany_label,2,-2);
+	$appDocUid = substr(@=auditedAccountOfCompany,2,-2);
+	$ext = substr($text,strrpos($text,"."));
+	$newName = "AUDITED ACCOUNT OF THE COMPANY".$ext;
+	@=auditedAccountOfCompany_label = "[\"".$newName."\"]";
+	renameFileName($appDocUid,$newName);
+}
+
+if(@=statementOfLoss != "" && (@=statementOfLoss_label != "" || @=statementOfLoss_label != "[]")){
+	$text = substr(@=statementOfLoss_label,2,-2);
+	$appDocUid = substr(@=statementOfLoss,2,-2);
+	$ext = substr($text,strrpos($text,"."));
+	$newName = "STATEMENT OF LOSS".$ext;
+	@=statementOfLoss_label = "[\"".$newName."\"]";
+	renameFileName($appDocUid,$newName);
+}
+   
+if(@=statementOfClaims != "" && (@=statementOfClaims_label != "" || @=statementOfClaims_label != "[]")){
+	$text = substr(@=statementOfClaims_label,2,-2);
+	$appDocUid = substr(@=statementOfClaims,2,-2);
+	$ext = substr($text,strrpos($text,"."));
+	$newName = "STATEMENT OF CLAIM".$ext;
+	@=statementOfClaims_label = "[\"".$newName."\"]";
+	renameFileName($appDocUid,$newName);
+}  
+
+if(@=statementFomEmployee != "" && (@=statementFomEmployee_label != "" || @=statementFomEmployee_label != "[]")){
+	$text = substr(@=statementFomEmployee_label,2,-2);
+	$appDocUid = substr(@=statementFomEmployee,2,-2);
+	$ext = substr($text,strrpos($text,"."));
+	$newName = "STATEMENT FROM EMPLOYEE INVOLVED".$ext;
+	@=statementFomEmployee_label = "[\"".$newName."\"]";
+	renameFileName($appDocUid,$newName);
+}
+
+if(@=deliveryWayBill != "" && (@=deliveryWayBill_label != "" || @=deliveryWayBill_label != "[]")){
+	$text = substr(@=deliveryWayBill_label,2,-2);
+	$appDocUid = substr(@=deliveryWayBill,2,-2);
+	$ext = substr($text,strrpos($text,"."));
+	$newName = "DELIVERY WAYBILL".$ext;
+	@=deliveryWayBill_label = "[\"".$newName."\"]";
+	renameFileName($appDocUid,$newName);
+}
+
+if(@=debitNote != "" && (@=debitNote_label != "" || @=debitNote_label != "[]")){
+	$text = substr(@=debitNote_label,2,-2);
+	$appDocUid = substr(@=debitNote,2,-2);
+	$ext = substr($text,strrpos($text,"."));
+	$newName = "DEBIT NOTE".$ext;
+	@=debitNote_label = "[\"".$newName."\"]";
+	renameFileName($appDocUid,$newName);
+}
+
+if(@=claimLetterFromThirdParty != "" && (@=claimLetterFromThirdParty_label != "" || @=claimLetterFromThirdParty_label != "[]")){
+	$text = substr(@=claimLetterFromThirdParty_label,2,-2);
+	$appDocUid = substr(@=claimLetterFromThirdParty,2,-2);
+	$ext = substr($text,strrpos($text,"."));
+	$newName = "CLAIM LETTER FROM THIRD PARTY INVOLVED".$ext;
+	@=claimLetterFromThirdParty_label = "[\"".$newName."\"]";
+	renameFileName($appDocUid,$newName);
+}
+
+if(@=billOfQuantity != "" && (@=billOfQuantity_label != "" || @=billOfQuantity_label != "[]")){
+	$text = substr(@=billOfQuantity_label,2,-2);
+	$appDocUid = substr(@=billOfQuantity,2,-2);
+	$ext = substr($text,strrpos($text,"."));
+	$newName = "BILL OF QUANTITY(BOQ)".$ext;
+	@=billOfQuantity_label = "[\"".$newName."\"]";
+	renameFileName($appDocUid,$newName);
+}
+
+if(@=medicalCertCauseDeath != "" && (@=medicalCertCauseDeath_label != "" || @=medicalCertCauseDeath_label != "[]")){
+	$text = substr(@=medicalCertCauseDeath_label,2,-2);
+	$appDocUid = substr(@=medicalCertCauseDeath,2,-2);
+	$ext = substr($text,strrpos($text,"."));
+	$newName = "MEDICAL CERTIFICATE OF CAUSE OF DEATH".$ext;
+	@=medicalCertCauseDeath_label = "[\"".$newName."\"]";
+	renameFileName($appDocUid,$newName);
+}
+
+if(@=deathRegistration != "" && (@=deathRegistration_label != "" || @=deathRegistration_label != "[]")){
+	$text = substr(@=deathRegistration_label,2,-2);
+	$appDocUid = substr(@=deathRegistration,2,-2);
+	$ext = substr($text,strrpos($text,"."));
+	$newName = "DEATH REGISTRATION".$ext;
+	@=deathRegistration_label = "[\"".$newName."\"]";
+	renameFileName($appDocUid,$newName);
+}
+ 
+$data = array();
+$count = 0;
+if(!empty(@=estimateOfLoss)){
+	foreach(@=estimateOfLoss as $fileData){
+		$appDocUid = $fileData["appDocUid"];
+		$name = $fileData["name"];
+		$version = $fileData["version"];
+		$ext = substr($name,strrpos($name,"."));
+		$newName = "ESTIMATE OF LOSS".($count +1).$ext;
+		$xd = array(
+			"appDocUid" => $appDocUid,
+			"name"=> $newName,
+			"version" => $version
+		);
+		$data[$count] = $xd;
+		$count ++;
+		
+		renameFileName($appDocUid,$newName);
+	}
+	@=estimateOfLoss = $data;
+}
+ 
+$data = array();
+$count = 0;
+if(!empty(@=purchaseReceipts)){
+	foreach(@=purchaseReceipts as $fileData){
+		$appDocUid = $fileData["appDocUid"];
+		$name = $fileData["name"];
+		$version = $fileData["version"];
+		$ext = substr($name,strrpos($name,"."));
+		$newName = "PURCHASE RECEIPTS".($count +1).$ext;
+		$xd = array(
+			"appDocUid" => $appDocUid,
+			"name"=> $newName,
+			"version" => $version
+		);
+		$data[$count] = $xd;
+		$count ++;
+		
+		renameFileName($appDocUid,$newName);
+	}
+	@=purchaseReceipts = $data;
+}
+
+$data = array();
+$count = 0;
+if(!empty(@=replacementInvoice)){
+	foreach(@=replacementInvoice as $fileData){
+		$appDocUid = $fileData["appDocUid"];
+		$name = $fileData["name"];
+		$version = $fileData["version"];
+		$ext = substr($name,strrpos($name,"."));
+		$newName = "REPLACEMENT INVOICE OF DAMAGED ITEMS".($count +1).$ext;
+		$xd = array(
+			"appDocUid" => $appDocUid,
+			"name"=> $newName,
+			"version" => $version
+		);
+		$data[$count] = $xd;
+		$count ++;
+		
+		renameFileName($appDocUid,$newName);
+	}
+	@=replacementInvoice = $data;
+}
+
+$data = array();
+$count = 0;
+if(!empty(@=stockValuationBeforeAfterLoss)){
+	foreach(@=stockValuationBeforeAfterLoss as $fileData){
+		$appDocUid = $fileData["appDocUid"];
+		$name = $fileData["name"];
+		$version = $fileData["version"];
+		$ext = substr($name,strrpos($name,"."));
+		$newName = "STOCK VALUATION BEFORE AND AFTER LOSS".($count +1).$ext;
+		$xd = array(
+			"appDocUid" => $appDocUid,
+			"name"=> $newName,
+			"version" => $version
+		);
+		$data[$count] = $xd;
+		$count ++;
+		
+		renameFileName($appDocUid,$newName);
+	}
+	@=stockValuationBeforeAfterLoss = $data;
+}
+ 
+$data = array();
+$count = 0;
+if(!empty(@=cashBookLedger)){
+	foreach(@=cashBookLedger as $fileData){
+		$appDocUid = $fileData["appDocUid"];
+		$name = $fileData["name"];
+		$version = $fileData["version"];
+		$ext = substr($name,strrpos($name,"."));
+		$newName = "CASH BOOK _ LEDGER FOR THE PERIOD".($count +1).$ext;
+		$xd = array(
+			"appDocUid" => $appDocUid,
+			"name"=> $newName,
+			"version" => $version
+		);
+		$data[$count] = $xd;
+		$count ++;
+		
+		renameFileName($appDocUid,$newName);
+	}
+	@=cashBookLedger = $data;
+}
+
+$data = array();
+$count = 0;
+if(!empty(@=securityReport)){
+	foreach(@=securityReport as $fileData){
+		$appDocUid = $fileData["appDocUid"];
+		$name = $fileData["name"];
+		$version = $fileData["version"];
+		$ext = substr($name,strrpos($name,"."));
+		$newName = "SECURITY REPORT".($count +1).$ext;
+		$xd = array(
+			"appDocUid" => $appDocUid,
+			"name"=> $newName,
+			"version" => $version
+		);
+		$data[$count] = $xd;
+		$count ++;
+		
+		renameFileName($appDocUid,$newName);
+	}
+	@=securityReport = $data;
+}
+  
+$data = array();
+$count = 0;
+if(!empty(@=statementFromWitnesses)){
+	foreach(@=statementFromWitnesses as $fileData){
+		$appDocUid = $fileData["appDocUid"];
+		$name = $fileData["name"];
+		$version = $fileData["version"];
+		$ext = substr($name,strrpos($name,"."));
+		$newName = "STATEMENT FROM OTHER WITNESSES".($count +1).$ext;
+		$xd = array(
+			"appDocUid" => $appDocUid,
+			"name"=> $newName,
+			"version" => $version
+		);
+		$data[$count] = $xd;
+		$count ++;
+		
+		renameFileName($appDocUid,$newName);
+	}
+	@=statementFromWitnesses = $data;
+}  
+
+$data = array();
+$count = 0;
+if(!empty(@=evidenceOfAmountStolen)){
+	foreach(@=evidenceOfAmountStolen as $fileData){
+		$appDocUid = $fileData["appDocUid"];
+		$name = $fileData["name"];
+		$version = $fileData["version"];
+		$ext = substr($name,strrpos($name,"."));
+		$newName = "EVIDENCE OF AMOUNT STOLEN".($count +1).$ext;
+		$xd = array(
+			"appDocUid" => $appDocUid,
+			"name"=> $newName,
+			"version" => $version
+		);
+		$data[$count] = $xd;
+		$count ++;
+		
+		renameFileName($appDocUid,$newName);
+	}
+	@=evidenceOfAmountStolen = $data;
+}  
+ 
+$data = array();
+$count = 0;
+if(!empty(@=photographs)){
+	foreach(@=photographs as $fileData){
+		$appDocUid = $fileData["appDocUid"];
+		$name = $fileData["name"];
+		$version = $fileData["version"];
+		$ext = substr($name,strrpos($name,"."));
+		$newName = "PHOTOGRAPHS".($count +1).$ext;
+		$xd = array(
+			"appDocUid" => $appDocUid,
+			"name"=> $newName,
+			"version" => $version
+		);
+		$data[$count] = $xd;
+		$count ++;
+		
+		renameFileName($appDocUid,$newName);
+	}
+	@=photographs = $data;
+} 
+ 
+$data = array();
+$count = 0;
+if(!empty(@=loanRepayment)){
+	foreach(@=loanRepayment as $fileData){
+		$appDocUid = $fileData["appDocUid"];
+		$name = $fileData["name"];
+		$version = $fileData["version"];
+		$ext = substr($name,strrpos($name,"."));
+		$newName = "LOAN REPAYMENT".($count +1).$ext;
+		$xd = array(
+			"appDocUid" => $appDocUid,
+			"name"=> $newName,
+			"version" => $version
+		);
+		$data[$count] = $xd;
+		$count ++;
+		
+		renameFileName($appDocUid,$newName);
+	}
+	@=loanRepayment = $data;
+}
+ 
+$data = array();
+$count = 0;
+if(!empty(@=terminationLetter)){
+	foreach(@=terminationLetter as $fileData){
+		$appDocUid = $fileData["appDocUid"];
+		$name = $fileData["name"];
+		$version = $fileData["version"];
+		$ext = substr($name,strrpos($name,"."));
+		$newName = "TERMINATION LETTER".($count +1).$ext;
+		$xd = array(
+			"appDocUid" => $appDocUid,
+			"name"=> $newName,
+			"version" => $version
+		);
+		$data[$count] = $xd;
+		$count ++;
+		
+		renameFileName($appDocUid,$newName);
+	}
+	@=terminationLetter = $data;
+}
+ 
+$data = array();
+$count = 0;
+if(!empty(@=appointmentLetter)){
+	foreach(@=appointmentLetter as $fileData){
+		$appDocUid = $fileData["appDocUid"];
+		$name = $fileData["name"];
+		$version = $fileData["version"];
+		$ext = substr($name,strrpos($name,"."));
+		$newName = "APPOINTMENT LETTER".($count +1).$ext;
+		$xd = array(
+			"appDocUid" => $appDocUid,
+			"name"=> $newName,
+			"version" => $version
+		);
+		$data[$count] = $xd;
+		$count ++;
+		
+		renameFileName($appDocUid,$newName);
+	}
+	@=appointmentLetter = $data;
+}
+
+$data = array();
+$count = 0;
+if(!empty(@=loanOfferLetter)){
+	foreach(@=loanOfferLetter as $fileData){
+		$appDocUid = $fileData["appDocUid"];
+		$name = $fileData["name"];
+		$version = $fileData["version"];
+		$ext = substr($name,strrpos($name,"."));
+		$newName = "LOAN OFFER LETTER".($count +1).$ext;
+		$xd = array(
+			"appDocUid" => $appDocUid,
+			"name"=> $newName,
+			"version" => $version
+		);
+		$data[$count] = $xd;
+		$count ++;
+		
+		renameFileName($appDocUid,$newName);
+	}
+	@=loanOfferLetter = $data;
+}
+
+$data = array();
+$count = 0;
+if(!empty(@=letterOfIntroduction)){
+	foreach(@=letterOfIntroduction as $fileData){
+		$appDocUid = $fileData["appDocUid"];
+		$name = $fileData["name"];
+		$version = $fileData["version"];
+		$ext = substr($name,strrpos($name,"."));
+		$newName = "LETTER OF INTRODUCTION ".($count +1).$ext;
+		$xd = array(
+			"appDocUid" => $appDocUid,
+			"name"=> $newName,
+			"version" => $version
+		);
+		$data[$count] = $xd;
+		$count ++;
+		
+		renameFileName($appDocUid,$newName);
+	}
+	@=letterOfIntroduction = $data;
+}
+  
+$data = array();
+$count = 0;
+if(!empty(@=otherDocuments)){
+	foreach(@=otherDocuments as $fileData){
+		$appDocUid = $fileData["appDocUid"];
+		$name = $fileData["name"];
+		$version = $fileData["version"];
+		$ext = substr($name,strrpos($name,"."));
+		$newName = "OTHER DOCUMENTS ".($count +1).$ext;
+		$xd = array(
+			"appDocUid" => $appDocUid,
+			"name"=> $newName,
+			"version" => $version
+		);
+		$data[$count] = $xd;
+		$count ++;
+		
+		renameFileName($appDocUid,$newName);
+	}
+	@=otherDocuments = $data;
+} 
