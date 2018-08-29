@@ -1,0 +1,103 @@
+//ini_set("soap.wsdl_cache_enabled", "0");
+@=tempBankList = array(
+	array(
+	"Id" => "1",
+	"Name" => "Access Bank Plc",
+	"SortCode" => "044150013"
+),
+array(
+	"Id" => "2",
+	"Name" => "Diamond Bank Plc",
+	"SortCode" => "063150162"
+),
+	array(
+	"Id" => "3",
+	"Name" => "GTB",
+	"SortCode" => "058152023"
+),
+array(
+	"Id" => "4",
+	"Name" => "First Bank Plc",
+	"SortCode" => "011151003",
+),
+	array(
+	"Id" => "5",
+	"Name" => "Zenith",
+	"SortCode" => "057150013",
+),
+	array(
+	"Id" => "6",
+	"Name" => "Stanbic IBTC",
+	"SortCode" => "221159522",
+),
+	array(
+	"Id" => "7",
+	"Name" => "UBA",
+	"SortCode" => "033152679",
+),
+	array(
+	"Id" => "8",
+	"Name" => "Skye Bank",
+	"SortCode" => "076151006",
+),
+	array(
+	"Id" => "9",
+	"Name" => "Union Bank",
+	"SortCode" => "032156825",
+),
+	array(
+	"Id" => "10",
+	"Name" => "FCMB",
+	"SortCode" => "214159996",
+),
+	array(
+	"Id" => "11",
+	"Name" => "Fidelity",
+	"SortCode" => "070150003",
+),
+		array(
+	"Id" => "12",
+	"Name" => "Eco Bank",
+	"SortCode" => "050150311",
+),
+			array(
+	"Id" => "13",
+	"Name" => "Wema Bank",
+	"SortCode" => "035150103",
+),
+
+	array(
+	"Id" => "14",
+	"Name" => "Jaiz Bank",
+	"SortCode" => "301080020",
+),
+	array(
+	"Id" => "15",
+	"Name" => "Sterling Bank",
+	"SortCode" => "232150016",
+),
+	array(
+	"Id" => "16",
+	"Name" => "Standard Chartered Bank",
+	"SortCode" => "068150015",
+)
+) ;
+	
+$client = new SoapClient("http://192.168.0.7/Customer_AimsWS/SMSAlertwc.asmx?wsdl");
+$result = $client->getBankList();
+if($result){
+	$bankList = $result -> getBankListResult;
+	if($bankList){
+		$banks = "";
+		foreach($bankList as $bank){
+			for($index = 0; $index < count($bank); $index ++){
+				@@bankList = $bank[$index] -> SortCode;
+				//break;
+				$code = $bank[$index] -> SortCode;
+				$name = $bank[$index] -> Name;
+				$banks .= "<option value='".$code."'>".$name."</option>";
+			}
+		}
+		@@bankList = $banks;	
+	}
+}
