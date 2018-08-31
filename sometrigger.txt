@@ -1,0 +1,45 @@
+$client = new SoapClient("http://192.168.0.7/Customer_AimsWS/SMSAlertwc.asmx?wsdl");
+$result = $client->getBankList();
+if($result){
+	$bankList = $result -> getBankListResult;
+	if($bankList){
+		@@bankList = $bankList;
+	}
+}
+
+$curBank = @@txtCustBankName;
+$list = @=tempBankList;
+$newSortCode = "";
+$bankName = "";
+foreach($list as $row){
+	$sortCode = $row["SortCode"];
+	$Id = $row["Id"];
+	if($Id == $curBank){
+		
+		foreach(@@bankList as $bank){
+			$found = false;
+			for($index = 0; $index < count($bank); $index ++){
+
+				$code = $bank[$index] -> SortCode;
+				if($code == $sortCode){
+					$bankName = $bank[$index] -> Name;
+					$newSortCode = $code;
+					$found = true;
+					break;
+				}
+
+			}
+			if($found){
+				break;
+			}
+		}
+	}
+}
+if($bankName != ""){
+	@@customerBank = $bankName;
+	@@customerBank_label = $bankName;
+}
+if($newSortCode != ""){
+	@@txtCustBankName = $newSortCode;
+	@@txtCustBankName_label = $newSortCode;
+}
