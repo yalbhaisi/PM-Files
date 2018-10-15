@@ -1,0 +1,167 @@
+Please find below: https://www.axamansard.com/inflowcollection/ProcessPayDirectRequest
+
+
+Customer Validation Request
+
+<CustomerInformationRequest>
+   <MerchantReference>12312321</MerchantReference>
+   <CustReference>0000287909</CustReference>
+   <PaymentItemCode>01</PaymentItemCode>
+<ThirdPartyCode>AXA</ThirdPartyCode>
+   <ServiceUsername></ServiceUsername>
+   <ServicePassword></ServicePassword>
+   <FtpUsername/>
+   <FtpPassword/>
+</CustomerInformationRequest>
+
+Customer Validation Response
+
+<CustomerInformationResponse>
+    <MerchantReference>7454</MerchantReference>
+    <Customers>
+        <Customer>
+            <Status>0</Status>
+            <CustReference>0000201375</CustReference>
+            <CustomerReferenceAlternate>0000201375</CustomerReferenceAlternate>
+            <FirstName>NWANKWONTA CHIZURU</FirstName>
+            <LastName>NWANKWONTA CHIZURU</LastName>
+            <Phone>08033592545</Phone>
+            <Email>NA</Email>
+            <ThirdPartyCode />
+            <Amount>0</Amount>
+            <PaymentItems>
+                <Item>
+                    <ProductName>Auto Classic</ProductName>
+                    <ProductCode>0000042026</ProductCode>
+                    <Quantity>1</Quantity>
+                    <Price>0</Price>
+                    <Subtotal>0</Subtotal>
+                    <Tax>0</Tax>
+                    <Total>0</Total>
+                </Item>
+                <Item>
+                    <ProductName>Auto Classic</ProductName>
+                    <ProductCode>0000201375</ProductCode>
+                    <Quantity>1</Quantity>
+                    <Price>0</Price>
+                    <Subtotal>0</Subtotal>
+                    <Tax>0</Tax>
+                    <Total>0</Total>
+                </Item>
+                <Item>
+                    <ProductName>Travel</ProductName>
+                    <ProductCode>0000218490</ProductCode>
+                    <Quantity>1</Quantity>
+                    <Price>0</Price>
+                    <Subtotal>0</Subtotal>
+                    <Tax>0</Tax>
+                    <Total>0</Total>
+                </Item>
+                <Item>
+                    <ProductName>Achieve Plus</ProductName>
+                    <ProductCode>3000019965</ProductCode>
+                    <Quantity>1</Quantity>
+                    <Price>0</Price>
+                    <Subtotal>0</Subtotal>
+                    <Tax>0</Tax>
+                    <Total>0</Total>
+                </Item>
+                <Item>
+                    <ProductName>Life Savings</ProductName>
+                    <ProductCode>3000048715</ProductCode>
+                    <Quantity>1</Quantity>
+                    <Price>0</Price>
+                    <Subtotal>0</Subtotal>
+                    <Tax>0</Tax>
+                    <Total>0</Total>
+                </Item>
+                <Item>
+                    <ProductName>Bonus Life</ProductName>
+                    <ProductCode>3004554602</ProductCode>
+                    <Quantity>1</Quantity>
+                    <Price>0</Price>
+                    <Subtotal>0</Subtotal>
+                    <Tax>0</Tax>
+                    <Total>0</Total>
+                </Item>
+            </PaymentItems>
+        </Customer>
+    </Customers>
+</CustomerInformationResponse>
+
+
+
+
+Payment Notification Request
+
+<PaymentNotificationRequest>
+    <ServiceUrl>http://test.com/Payments/Interswitch/Notification_CPN.aspx</ServiceUrl>
+    <ServiceUsername/>
+    <ServicePassword/>
+    <FtpUrl>http://test.com/Payments/Interswitch/Notification_CPN.aspx</FtpUrl>
+    <FtpUsername/>
+    <FtpPassword/>
+    <Payments>
+        <Payment>
+            <IsRepeated>False</IsRepeated>
+            <ProductGroupCode>HTTPGENERICv31</ProductGroupCode>
+            <PaymentLogId>322586</PaymentLogId>
+            <CustReference>0000288038</CustReference>
+            <AlternateCustReference>--N/A--</AlternateCustReference>
+            <Amount>1000.00</Amount>
+            <PaymentStatus>0</PaymentStatus>
+            <PaymentMethod>Cash</PaymentMethod>
+            <PaymentReference>FBN|BRH|ABSA|17-03-2016|091483</PaymentReference>
+            <TerminalId/>
+            <ChannelName>Bank Branc</ChannelName>
+            <Location>ABAJI</Location>
+            <IsReversal>False</IsReversal>
+            <PaymentDate>03/17/2016 08:55:05</PaymentDate>
+            <SettlementDate>03/18/2016 00:00:01</SettlementDate>
+            <InstitutionId>ABSA</InstitutionId>
+            <InstitutionName>Abia State Autoreg</InstitutionName>
+            <BranchName>ABAJI</BranchName>
+            <BankName>First Bank of Nigeria Plc</BankName>
+            <FeeName/>
+            <CustomerName/>
+            <OtherCustomerInfo>|</OtherCustomerInfo>
+            <ReceiptNo>1607749469</ReceiptNo>
+            <CollectionsAccount>12232345690</CollectionsAccount>
+            <ThirdPartyCode/>
+            <PaymentItems>
+                <PaymentItem>
+                    <ItemName>Payment</ItemName>
+                    <ItemCode>ABS001</ItemCode>
+                    <ItemAmount>1000.00</ItemAmount>
+                    <LeadBankCode>FBN</LeadBankCode>
+                    <LeadBankCbnCode>011</LeadBankCbnCode>
+                    <LeadBankName>First Bank of Nigeria Plc</LeadBankName>
+                    <CategoryCode/>
+                    <CategoryName/>
+                    <ItemQuantity>1</ItemQuantity>
+                </PaymentItem>
+            </PaymentItems>
+            <BankCode>FBN</BankCode>
+            <CustomerAddress/>
+            <CustomerPhoneNumber/>
+            <DepositorName/>
+            <DepositSlipNumber>1212343</DepositSlipNumber>
+            <PaymentCurrency>566</PaymentCurrency>
+            <OriginalPaymentLogId/>
+            <OriginalPaymentReference/>
+            <Teller>ABAJI13 ABAJI13</Teller>
+        </Payment>
+    </Payments>
+</PaymentNotificationRequest>
+
+Payment Notification Response
+
+<PaymentNotificationResponse>
+    <Payments>
+        <Payment>
+            <PaymentLogId>322586</PaymentLogId>
+            <Status>0</Status>
+        </Payment>
+    </Payments>
+</PaymentNotificationResponse>
+
